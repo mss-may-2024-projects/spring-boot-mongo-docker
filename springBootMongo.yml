@@ -48,7 +48,7 @@ kind: Deployment
 metadata:
   name: springappdeployment
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: springapp
@@ -60,7 +60,7 @@ spec:
     spec:
       containers:
       - name: springappcontainer
-        image: dockerhandson/spring-boot-mongo
+        image: dockerhandson/spring-boot-mongo:${B_NUMBER}
         ports:
         - containerPort: 8080
         env:
